@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sanjay's Portfolio</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #000;
+      color: red;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 10px;
+      background: #111;
+    }
+    nav a {
+      color: #0f0;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+    nav a:hover {
+      color: #ff4444;
+      background: #222;
+    }
+
+    main {
+      flex: 1;
+      padding-bottom: 40px;
+    }
+
+    section {
+      display: none;
+      padding: 40px 20px;
+    }
+    section.active {
+      display: block;
+    }
+
+    section p:nth-of-type(even) {
+      color: green;
+    }
+    section ul li:nth-child(even) {
+      color: green;
+    }
+    a {
+      color: #0f0;
+    }
+    a:hover {
+      color: #ff4444;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .about-text {
+      flex: 1;
+      min-width: 250px;
+    }
+    .about-photo {
+      flex: 1;
+      text-align: center;
+      min-width: 200px;
+    }
+    .about-photo img {
+      max-width: 250px;
+      border-radius: 10px;
+    }
+    .project-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+    .project-description {
+      flex: 1;
+      min-width: 250px;
+    }
+    .project-media {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
+    .project-media img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: #fff;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+    }
+    .mySlides {
+      display: none;
+    }
+    .mySlides img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('about')">About Me</a>
+    <a href="#" onclick="showSection('skills')">Skills</a>
+    <a href="#" onclick="showSection('projects')">Projects</a>
+    <a href="#" onclick="showSection('resume')">Resume</a>
+    <a href="#" onclick="showSection('contact')">Contact</a>
+  </nav>
+
+  <main>
+    <!-- Home -->
+    <section id="home" class="active">
+      <h1>Welcome to My Portfolio!</h1>
+      <p>Welcome to my personal portfolio! Here, I share my academic journey as a dedicated B.Tech student at Anurag University, where I am constantly expanding my knowledge and skills in technology. This site reflects my passion for innovation, problem-solving, and exploring new tech trends. Whether it's coding projects, creative inventions, or learning experiences, you’ll find a glimpse into my growth as a tech enthusiast and aspiring engineer.</p>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <div class="about-text">
+          <h3>Mudumby Sanjay</h3>
+          <p>
+            Email: <a href="mailto:23eg106a41@anurag.edu.in">23eg106a41@anurag.edu.in</a><br/>
+            Personal Email: <a href="mailto:sanjay.mudumby@gmail.com">sanjay.mudumby@gmail.com</a><br/>
+            Phone: 9492764088
+          </p>
+          <p>
+            I am a passionate and dedicated B.Tech student from Anurag University, currently part of the 2027 graduating batch. My journey in the field of technology has been driven by a deep curiosity and a strong desire to build innovative, practical solutions that can solve real-world problems. I love experimenting with new ideas and often find myself brainstorming creative inventions that blend technology with everyday life. In addition to my academic interests, I enjoy playing strategic games like checkers, which help sharpen my problem-solving skills. Music is another big part of my life—it keeps me inspired and focused. Whether it's coding, inventing, or simply enjoying a good tune, I believe in constantly exploring and learning something new every day.
+          </p>
+        </div>
+        <div class="about-photo">
+          <img src="sanjay.mudumby.jpg" alt="Sanjay Mudumby Photo">
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML & CSS</li>
+        <li>Python Programming</li>
+      </ul>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      
+      <div class="project-container">
+        <div class="project-description">
+          <h3>Smart Home Automation</h3>
+          <p>
+            A system that enables remote control and automation of home appliances using NodeMCU, allowing users to monitor and manage devices via Wi-Fi for convenience and energy efficiency. It also supports voice commands using "Ok Google" for hands-free control of home devices.
+          </p>
+        </div>
+        <div class="project-media">
+          <!-- Optional project image here -->
+        </div>
+      </div>
+
+      <div class="project-container">
+        <div class="project-description">
+          <h3>Portfolio Website</h3>
+          <p>
+            A personal portfolio website developed using HTML, CSS, and JavaScript to showcase skills, projects, and contact information with a clean and responsive design.
+          </p>
+        </div>
+        <div class="project-media">
+          <!-- Optional project image here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume">
+      <h2>Resume</h2>
+      <p>
+        <a href="resume.pdf" target="_blank">Download My Resume (PDF)</a>
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:23eg106a41@anurag.edu.in">23eg106a41@anurag.edu.in</a><br/>
+        Personal Email: <a href="mailto:sanjay.mudumby@gmail.com">sanjay.mudumby@gmail.com</a><br/>
+        Phone: +91 9492764088<br/>
+        LinkedIn: <a href="http://www.linkedin.com/in/mudumby-sanjay-5068aa28b" target="_blank">linkedin.com/in/yourprofile</a>
+        GitHub: <a href="https://github.com/Sanjay-glitch-dotcom" target="_blank">github.com/Sanjay-glitch-dotcom</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; Mudumby.Sanjay
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
